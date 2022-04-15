@@ -1,11 +1,13 @@
+<script setup></script>
+
 <template>
   <div w:grid="~ cols-3">
     <div id="presentation" w:grid="col-span-2" w:m="t-[20%]">
-      <p w:text="[25px] light-50">Bonjour, je suis</p>
+      <p w:text="[25px] light-50">{{ t("presentation1") }}</p>
       <br />
       <p w:text="[45px]" w:font="bold">Enzo Averlant</p>
       <br />
-      <p w:text="[25px] light-50">Concepteur développeur d'applications</p>
+      <p w:text="[25px] light-50">{{ t("presentation2") }}</p>
       <br />
       <RouterLink
         to="/contact"
@@ -13,11 +15,11 @@
         w:text="white"
         w:p="10px"
         w:border="~ rounded none"
-        >Me contacter</RouterLink
+        >{{ t("contactme") }}</RouterLink
       >
     </div>
     <div class="illustration" w:text="center">
-      <img src="https://assets.codepen.io/3364143/glass.png" />
+      <img src="../assets/dev.svg" />
     </div>
   </div>
 </template>

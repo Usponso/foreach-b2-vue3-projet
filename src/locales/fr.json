@@ -1,0 +1,16 @@
+{
+  "home": "Accueil",
+  "skills": "Compétences",
+  "projects": "Projets",
+  "contact": "Contact",
+  "contactme": "Me contacter",
+  "presentation1": "Bonjour, je suis",
+  "presentation2": "Concepteur Développeur d'Applications",
+  "firstname": "Prénom",
+  "lastname": "Nom",
+  "subject": "Sujet",
+  "message": "Message",
+  "mail": "Adresse email",
+  "phone": "Téléphone",
+  "send": "Envoyer"
+}
