@@ -1,5 +1,6 @@
 import App from "./App.vue";
 import router from "./router.js";
+import { createI18n } from "vue-i18n";
 import "virtual:windi.css";
 
 const app = createApp(App);

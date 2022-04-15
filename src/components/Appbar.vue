@@ -1,4 +1,11 @@
-<script setup></script>
+<script setup>
+import { useCycleList } from "@vueuse/core";
+
+const { t, locale, availableLocales } = useI18n();
+const { next: nextLang } = useCycleList(availableLocales, {
+  initialValue: locale,
+});
+</script>
 
 <template>
   <nav w:w="full" w:grid="inline cols-2" w:p="8">
@@ -6,7 +13,7 @@
       <img src="../assets/logov3.png" w:w="50px" />
     </div>
     <ul
-      w:grid="inline cols-4"
+      w:grid="inline cols-5"
       w:justify="items-center"
       w:align="content-center"
     >
@@ -28,6 +35,9 @@
           w:border="~ rounded none"
           >{{ t("contact") }}</RouterLink
         >
+      </li>
+      <li>
+        <button @click="() => (locale = nextLang())">{{ locale }}</button>
       </li>
     </ul>
   </nav>

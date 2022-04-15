@@ -1,4 +1,8 @@
 <script setup>
+const { t } = useI18n({
+  inheritLocale: true,
+});
+
 const firstname = ref("");
 const lastname = ref("");
 const sujet = ref("");

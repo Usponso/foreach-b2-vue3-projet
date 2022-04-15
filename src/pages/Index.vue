@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+const { t } = useI18n({
+  inheritLocale: true,
+});
+</script>
 
 <template>
   <div w:grid="~ cols-3">
