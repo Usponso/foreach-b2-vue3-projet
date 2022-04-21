@@ -1,5 +1,11 @@
 # Projet Vue.js 3 + Vite - ForEach B2
 
+## Enzo Averlant
+
+## LIVE VERSION
+
+[Portfolio](https://enzoaverlant.netlify.app)
+
 ## Quel est le projet (spécifications) ? 
 
 Le but de ce projet est de créer votre portfolio ou site CV à l'aide de Vue.js 3 et Vite.
