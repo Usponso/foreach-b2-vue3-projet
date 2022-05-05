@@ -1,21 +1,22 @@
 <script setup></script>
 
 <template>
-  <div class="glass" w:p="40px" w:box="border" w:w="full" w:font="Poppins">
-    <header w:text="[18px]"><Appbar /></header>
+  <div class="glass" w:w="full" w:font="Hellix 500">
+    <header w:text="[18px]">
+      <Appbar style="z-index: 1" w:pos="absolute" />
+    </header>
 
-    <main w:p="60px"><RouterView /></main>
+    <main class="glass" w:p="60px">
+      <RouterView />
+    </main>
   </div>
 </template>
 
 <style>
 html {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  color: #312e81;
+  color: white;
   min-height: 100vh;
-  background-image: url("./assets/grainy-2.jpg");
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #111111;
 }
 .glass {
   background: rgba(255, 255, 255, 0.3);
@@ -23,5 +24,31 @@ html {
   -webkit-backdrop-filter: blur(5px);
   min-height: 100vh;
   height: 100%;
+}
+#starfield {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: white white;
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
 }
 </style>

@@ -8,37 +8,65 @@ const { next: nextLang } = useCycleList(availableLocales, {
 </script>
 
 <template>
-  <nav w:w="full" w:grid="inline cols-2" w:p="8">
-    <div w:m="left-[20px]">
-      <img src="../assets/logov3.png" w:w="50px" />
-    </div>
+  <nav w:w="full" w:flex="inline" w:justify="between" w:text="[20px]" w:p="8">
+    <p class="gradient-text" w:font="800">&lt;e.a/&gt;</p>
     <ul
-      w:grid="inline cols-5"
+      w:grid="inline col-start-1 col-end-4 cols-3"
       w:justify="items-center"
       w:align="content-center"
     >
-      <li>
+      <li class="menu-link">
         <RouterLink to="/">{{ t("home") }}</RouterLink>
       </li>
-      <li>
+      <li class="menu-link">
         <RouterLink to="/skills">{{ t("skills") }}</RouterLink>
       </li>
-      <li>
+      <li class="menu-link">
         <RouterLink to="/projects">{{ t("projects") }}</RouterLink>
       </li>
-      <li>
-        <RouterLink
-          to="/contact"
-          w:bg="primary"
-          w:text="white"
-          w:p="10px"
-          w:border="~ rounded none"
-          >{{ t("contact") }}</RouterLink
-        >
-      </li>
-      <li>
+      <!-- <li>
         <button @click="() => (locale = nextLang())">{{ locale }}</button>
-      </li>
+      </li> -->
     </ul>
+    <div w:grid="col-start-12" w:align="self-center">
+      <RouterLink
+        to="/contact"
+        w:bg="primary"
+        w:text="white"
+        w:p="x-5 y-2"
+        w:border="~ rounded none"
+      >
+        {{ t("contact") }}
+      </RouterLink>
+    </div>
   </nav>
 </template>
+
+<style scoped>
+.menu-link {
+  display: inline-block;
+  position: relative;
+}
+.menu-link:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -15px;
+  left: 0;
+  background: -webkit-linear-gradient(45deg, #21bde4, #b548c6 90%);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.menu-link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.gradient-text {
+  background: -webkit-linear-gradient(45deg, #21bde4, #b548c6 60%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
