@@ -19,10 +19,10 @@ const { next: nextLang } = useCycleList(availableLocales, {
         <RouterLink to="/">{{ t("home") }}</RouterLink>
       </li>
       <li class="menu-link">
-        <RouterLink to="/skills">{{ t("skills") }}</RouterLink>
+        <a href="#skills">{{ t("skills") }}</a>
       </li>
       <li class="menu-link">
-        <RouterLink to="/projects">{{ t("projects") }}</RouterLink>
+        <a href="#projects">{{ t("projects") }}</a>
       </li>
       <!-- <li>
         <button @click="() => (locale = nextLang())">{{ locale }}</button>

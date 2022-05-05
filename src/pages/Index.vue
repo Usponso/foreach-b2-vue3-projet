@@ -14,6 +14,7 @@ const { t } = useI18n({
 
 <template>
   <StarField
+    w:w="screen"
     id="starfield"
     star="https://klevron.github.io/codepen/misc/star.png"
     cloud="./src/assets/clouds1.jpg"
@@ -44,6 +45,11 @@ const { t } = useI18n({
     >
       {{ t("contact") }}
     </RouterLink>
+  </div>
+
+  <div>
+    <hr />
+    TEST
   </div>
 </template>
 

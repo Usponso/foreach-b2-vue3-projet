@@ -16,10 +16,11 @@
 html {
   color: white;
   min-height: 100vh;
-  background-color: #111111;
+  background-color: black;
+  overflow-x: hidden;
 }
 .glass {
-  background: rgba(255, 255, 255, 0.3);
+  background: black;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   min-height: 100vh;
@@ -44,7 +45,7 @@ html {
   width: 16px;
 }
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: black;
 }
 *::-webkit-scrollbar-thumb {
   background-color: white;
