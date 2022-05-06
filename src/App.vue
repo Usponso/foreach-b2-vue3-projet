@@ -3,7 +3,7 @@
 <template>
   <div class="glass" w:w="full" w:font="Hellix 500">
     <header w:text="[18px]">
-      <Appbar style="z-index: 1" w:pos="absolute" />
+      <Appbar style="z-index: 1" />
     </header>
 
     <main class="glass" w:p="60px">
@@ -18,6 +18,7 @@ html {
   min-height: 100vh;
   background-color: black;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .glass {
   background: black;

@@ -1,5 +1,6 @@
 <script setup>
 import { useCycleList } from "@vueuse/core";
+import TranslateIcon from "~icons/mdi/translate";
 
 const { t, locale, availableLocales } = useI18n();
 const { next: nextLang } = useCycleList(availableLocales, {
@@ -11,7 +12,7 @@ const { next: nextLang } = useCycleList(availableLocales, {
   <nav w:w="full" w:flex="inline" w:justify="between" w:text="[20px]" w:p="8">
     <p class="gradient-text" w:font="800">&lt;e.a/&gt;</p>
     <ul
-      w:grid="inline col-start-1 col-end-4 cols-3"
+      w:grid="inline col-start-1 col-end-4 cols-4"
       w:justify="items-center"
       w:align="content-center"
     >
@@ -24,11 +25,13 @@ const { next: nextLang } = useCycleList(availableLocales, {
       <li class="menu-link">
         <a href="#projects">{{ t("projects") }}</a>
       </li>
-      <!-- <li>
-        <button @click="() => (locale = nextLang())">{{ locale }}</button>
-      </li> -->
+      <li class="menu-link">
+        <button @click="() => (locale = nextLang())">
+          <TranslateIcon /> {{ locale }}
+        </button>
+      </li>
     </ul>
-    <div w:grid="col-start-12" w:align="self-center">
+    <div w:align="self-center">
       <RouterLink
         to="/contact"
         w:bg="primary"
