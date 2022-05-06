@@ -3,7 +3,7 @@
 <template>
   <div class="glass" w:w="full" w:font="Hellix 500">
     <header w:text="[18px]">
-      <Appbar style="z-index: 1" />
+      <Appbar style="z-index: 1" w:pos="absolute" />
     </header>
 
     <main class="glass" w:p="60px">

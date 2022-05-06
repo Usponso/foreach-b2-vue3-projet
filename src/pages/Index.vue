@@ -23,12 +23,11 @@ const { t } = useI18n({
 </script>
 
 <template>
-  <div w:m="b-[100px]">
+  <div w:m="b-[100px]" style="pointer-events: all">
     <StarField
       w:w="screen"
       id="starfield"
-      star="./src/assets/star.png"
-      cloud="./src/assets/clouds1.jpg"
+      star="https://klevron.github.io/codepen/misc/star.png"
       :count="5000"
       :velocity="velocity"
       :colors="colors"
@@ -60,7 +59,9 @@ const { t } = useI18n({
   </div>
 
   <section w:m="b-[100px]">
-    <p w:text="[55px] center" class="gradient-text" w:font="700">Compétences</p>
+    <p w:text="[55px] center" class="gradient-text" w:font="700">
+      {{ t("skills") }}
+    </p>
     <div w:grid="~ cols-5 gap-6" w:m="t-[50px]" id="skills">
       <SkillCard title="HTML5">
         <HtmlIcon style="font-size: 5em" />
@@ -96,7 +97,9 @@ const { t } = useI18n({
   </section>
 
   <section id="projects">
-    <p w:text="[55px] center" class="gradient-text" w:font="700">Projets</p>
+    <p w:text="[55px] center" class="gradient-text" w:font="700">
+      {{ t("projects") }}
+    </p>
   </section>
 </template>
 
@@ -134,7 +137,6 @@ const { t } = useI18n({
   color: white;
   border-radius: 10px;
 }
-
 .btn-grad:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
