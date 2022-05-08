@@ -85,7 +85,6 @@ const sendMessage = async () => {
       <label w:grid="col-span-full">
         {{ t("message") }}<br />
         <textarea rows="5" v-model="message"></textarea>
-        {{ message }}
       </label>
 
       <label w:grid="col-span-full">
@@ -117,7 +116,8 @@ button {
   padding: 10px;
   border-radius: 10px;
 }
-input {
+input,
+textarea {
   color: black;
   font-weight: bold;
 }
