@@ -1,7 +1,7 @@
 <script setup>
 import StarField from "@troisjs/components/src/stars/StarField.vue";
 import * as palettes from "nice-color-palettes/100.json";
-import SkillCard from "../components/SkillCard.vue";
+import { getRepos } from "../composables/getRepos";
 import HtmlIcon from "~icons/vscode-icons/file-type-html";
 import CssIcon from "~icons/vscode-icons/file-type-css";
 import JsIcon from "~icons/vscode-icons/file-type-js-official";
@@ -13,7 +13,14 @@ import BootstrapIcon from "~icons/logos/bootstrap";
 import GithubIcon from "~icons/mdi/github";
 import PythonIcon from "~icons/vscode-icons/file-type-python";
 
-const niceColors = palettes.default;
+const repos = ref();
+
+onMounted(async () => {
+  repos.value = await getRepos();
+  console.log(repos);
+});
+
+//const niceColors = palettes.default;
 const colors = ["#66FFFF", "#8CBFE6", "#B380CC", "#D940B3", "#FF0099"]; //niceColors[95]
 const velocity = ref(1);
 
@@ -58,11 +65,11 @@ const { t } = useI18n({
     </div>
   </div>
 
-  <section w:m="b-[100px]">
+  <section w:m="b-[100px]" id="skills">
     <p w:text="[55px] center" class="gradient-text" w:font="700">
       {{ t("skills") }}
     </p>
-    <div w:grid="~ cols-5 gap-6" w:m="t-[50px]" id="skills">
+    <div w:grid="~ cols-5 gap-6" w:m="t-[50px]">
       <SkillCard title="HTML5">
         <HtmlIcon style="font-size: 5em" />
       </SkillCard>
@@ -100,6 +107,14 @@ const { t } = useI18n({
     <p w:text="[55px] center" class="gradient-text" w:font="700">
       {{ t("projects") }}
     </p>
+    <div w:grid="~ cols-2 gap-6" w:m="t-[50px]">
+      <RepoCard
+        v-for="repo in repos"
+        :title="repo.name"
+        :description="repo.description"
+        :link="repo.url"
+      />
+    </div>
   </section>
 </template>
 
