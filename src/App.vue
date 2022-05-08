@@ -1,4 +1,7 @@
-<script setup></script>
+<script setup>
+import LinkedinIcon from "~icons/mdi/linkedin";
+import GithubIcon from "~icons/mdi/github";
+</script>
 
 <template>
   <div class="glass" w:w="full" w:font="Hellix 500">
@@ -9,6 +12,18 @@
     <main class="glass" w:p="60px">
       <RouterView />
     </main>
+
+    <footer w:text="center">
+      <div style="font-size: 2em">
+        <a href="https://github.com/Usponso">
+          <GithubIcon />
+        </a>
+        <a href="https://fr.linkedin.com/in/enzo-averlant-a147b0149">
+          <LinkedinIcon />
+        </a>
+      </div>
+      <div>©2022 - Enzo Averlant</div>
+    </footer>
   </div>
 </template>
 

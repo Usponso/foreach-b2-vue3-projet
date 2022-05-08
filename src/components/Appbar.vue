@@ -20,24 +20,25 @@ const { next: nextLang } = useCycleList(availableLocales, {
         <RouterLink to="/">{{ t("home") }}</RouterLink>
       </li>
       <li class="menu-link">
-        <a href="#skills">{{ t("skills") }}</a>
+        <a href="/#skills">{{ t("skills") }}</a>
       </li>
       <li class="menu-link">
-        <a href="#projects">{{ t("projects") }}</a>
+        <a href="/#projects">{{ t("projects") }}</a>
       </li>
       <li class="menu-link">
-        <button @click="() => (locale = nextLang())">
+        <button w:text="uppercase" @click="() => (locale = nextLang())">
           <TranslateIcon /> {{ locale }}
         </button>
       </li>
     </ul>
     <div w:align="self-center">
       <RouterLink
+        class="btn-grad"
         to="/contact"
-        w:bg="primary"
+        w:bg=""
         w:text="white"
         w:p="x-5 y-2"
-        w:border="~ rounded none"
+        w:border="~ rounded"
       >
         {{ t("contact") }}
       </RouterLink>

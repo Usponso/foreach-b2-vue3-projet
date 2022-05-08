@@ -62,46 +62,50 @@ const sendMessage = async () => {
 </script>
 
 <template>
-  <div w:grid="~ cols-12 gap-3">
-    <label w:grid="col-span-6">
-      {{ t("firstname") }}<br />
-      <input v-model="firstname" />
-    </label>
+  <div w:grid="~ cols-2 gap-10" w:m="t-[8%]">
+    <div w:text="4em" class="contact-img gradient-text">
+      <p w:font="700">{{ t("contactme") }}</p>
+      <img w:w="[50%]" src="../assets/contact.svg" />
+    </div>
+    <div w:grid="~ col-start-2 cols-12 gap-3">
+      <label w:grid="col-span-6">
+        {{ t("firstname") }}<br />
+        <input v-model="firstname" />
+      </label>
 
-    <label w:grid="col-span-6">
-      {{ t("lastname") }}<br />
-      <input v-model="lastname" />
-    </label>
-    <label w:grid="col-span-full">
-      {{ t("subject") }}<br />
-      <input v-model="sujet" />
-    </label>
+      <label w:grid="col-span-6">
+        {{ t("lastname") }}<br />
+        <input v-model="lastname" />
+      </label>
+      <label w:grid="col-span-full">
+        {{ t("subject") }}<br />
+        <input v-model="sujet" />
+      </label>
 
-    <label w:grid="col-span-full">
-      {{ t("message") }}<br />
-      <textarea rows="5" v-model="message"></textarea>
-      {{ message }}
-    </label>
+      <label w:grid="col-span-full">
+        {{ t("message") }}<br />
+        <textarea rows="5" v-model="message"></textarea>
+        {{ message }}
+      </label>
 
-    <label w:grid="col-span-full">
-      {{ t("mail") }}<br />
-      <input v-model="mail" />
-    </label>
+      <label w:grid="col-span-full">
+        {{ t("mail") }}<br />
+        <input v-model="mail" />
+      </label>
 
-    <label w:grid="col-span-full">
-      {{ t("phone") }}<br />
-      <input v-model="phone" />
-    </label>
-    <button
-      @click="sendMessage()"
-      w:bg="primary"
-      w:text="white"
-      w:p="10px"
-      w:border="~ rounded none"
-      w:grid="col-span-full"
-    >
-      {{ t("send") }}
-    </button>
+      <label w:grid="col-span-full">
+        {{ t("phone") }}<br />
+        <input v-model="phone" />
+      </label>
+      <button
+        @click="sendMessage()"
+        w:grid="col-span-full"
+        class="btn-grad"
+        w:font="bold"
+      >
+        {{ t("send") }}
+      </button>
+    </div>
   </div>
 </template>
 
@@ -112,5 +116,39 @@ button {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
+}
+input {
+  color: black;
+  font-weight: bold;
+}
+.gradient-text {
+  text-transform: uppercase;
+  background: linear-gradient(to right, #21bde4 30%, #b548c6 65%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.contact-img {
+  align-self: center;
+  text-align: -webkit-center;
+  line-height: 3em;
+}
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #21bde4 0%,
+    #b548c6 51%,
+    #21bde4 100%
+  );
+  padding: 15px 35px;
+  transition: 1s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+}
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 </style>

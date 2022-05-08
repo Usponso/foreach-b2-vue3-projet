@@ -12,6 +12,7 @@ import CSharpIcon from "~icons/vscode-icons/file-type-csharp2";
 import BootstrapIcon from "~icons/logos/bootstrap";
 import GithubIcon from "~icons/mdi/github";
 import PythonIcon from "~icons/vscode-icons/file-type-python";
+import RocketIcon from "~icons/ic/baseline-rocket-launch";
 
 const repos = ref();
 
@@ -35,7 +36,7 @@ const { t } = useI18n({
       w:w="screen"
       id="starfield"
       star="https://klevron.github.io/codepen/misc/star.png"
-      :count="5000"
+      :count="7000"
       :velocity="velocity"
       :colors="colors"
     />
@@ -53,15 +54,15 @@ const { t } = useI18n({
       <br />
       <br />
       <br />
-      <RouterLink
+      <a
+        href="#skills"
         style="pointer-events: all"
-        to="/contact"
         class="btn-grad"
         @mouseenter="velocity = 100"
         @mouseleave="velocity = 1"
       >
-        {{ t("contact") }}
-      </RouterLink>
+        <RocketIcon w:text="sub" />
+      </a>
     </div>
   </div>
 
@@ -107,12 +108,14 @@ const { t } = useI18n({
     <p w:text="[55px] center" class="gradient-text" w:font="700">
       {{ t("projects") }}
     </p>
-    <div w:grid="~ cols-2 gap-6" w:m="t-[50px]">
+    <div w:grid="~ cols-3 gap-6" w:m="t-[50px]">
       <RepoCard
         v-for="repo in repos"
+        :key="repo.id"
         :title="repo.name"
         :description="repo.description"
-        :link="repo.url"
+        :link="repo.html_url"
+        :language="repo.language"
       />
     </div>
   </section>
@@ -141,12 +144,8 @@ const { t } = useI18n({
     #b548c6 51%,
     #21bde4 100%
   );
-}
-.btn-grad {
   margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
+  padding: 15px 35px;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;

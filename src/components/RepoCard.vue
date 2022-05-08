@@ -1,5 +1,5 @@
 <script setup>
-import RepoIcon from "~icons/ri/git-repository-fill";
+import RepoIcon from "~icons/ri/git-repository-line";
 
 defineProps({
   title: {
@@ -12,7 +12,7 @@ defineProps({
   },
   link: {
     type: String,
-    required: false,
+    required: true,
   },
   visibility: {
     type: String,
@@ -30,20 +30,19 @@ defineProps({
     class="shadow"
     w:bg="neutral-900"
     w:border="~ rounded none"
-    w:p="10px"
-    w:grid="~ cols-1 rows-4"
+    w:p="20px"
+    w:grid="~ cols-1 rows-3 gap-y-2"
   >
     <div w:flex="inline">
-      <RepoIcon />
-      <p>{{ title }}</p>
+      <p>
+        <RepoIcon w:text="text-bottom" />&nbsp;
+        <a :href="link" w:text="underline">{{ title }}</a>
+      </p>
     </div>
     <div w:grid="row-start-2">
       {{ description }}
     </div>
-    <div w:grid="row-start-3">
-      {{ link }}
-    </div>
-    <div w:grid="row-start-4" w:flex="inline">
+    <div w:grid="row-start-3" w:flex="inline">
       {{ language }} {{ visibility }}
     </div>
   </div>
